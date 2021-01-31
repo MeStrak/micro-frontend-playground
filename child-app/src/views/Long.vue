@@ -1,7 +1,13 @@
 <template>
   <div class="home">
+      This is some long content
     <HelloWorld msg="This is child app 1!!!!" />
+        <HelloWorld msg="This is child app 1!!!!" />
+            <HelloWorld msg="This is child app 1!!!!" />
+                <HelloWorld msg="This is child app 1!!!!" />
+
   </div>
+  
 </template>
 
 <script lang="ts">
