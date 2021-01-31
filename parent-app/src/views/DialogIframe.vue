@@ -30,7 +30,7 @@ Show another dialog containing an iFrame.      </v-btn>
 <v-btn
         color="primary"
         dark
-        @click.stop="dialogGraph = true"
+        @click.stop="dialogLong = true"
       >
 Show a LONG dialog containing an iFrame.      </v-btn>
   
