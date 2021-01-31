@@ -23,7 +23,14 @@ Show a dialog containing an iFrame.      </v-btn>
 <v-btn
         color="primary"
         dark
-        @click.stop="dialogLong = true"
+        @click.stop="dialogGraph = true"
+      >
+Show another dialog containing an iFrame.      </v-btn>
+<br /><br />
+<v-btn
+        color="primary"
+        dark
+        @click.stop="dialogGraph = true"
       >
 Show a LONG dialog containing an iFrame.      </v-btn>
   
@@ -60,6 +67,44 @@ Can you tell that this isn't in the app?          </v-card-title>
               @click="dialogNormal = false"
             >
               Yup
+            </v-btn>
+          </v-card-actions>
+        </v-card>
+      </v-dialog>
+
+<v-dialog
+        v-model="dialogGraph"
+        max-width="80%"
+      >
+        <v-card>
+          <v-card-title class="headline">
+What do you think about this one?          </v-card-title>
+  
+
+    <iframe
+      v-resize.quiet="{ log: true }"
+      width="100%"
+      frameborder="0"
+      src="https://8082-a6b6d588-a78c-4b29-8563-e0f15ab5d201.ws-eu03.gitpod.io/"
+    ></iframe>
+
+          <v-card-actions>
+            <v-spacer></v-spacer>
+  
+            <v-btn
+              color="red darken-1"
+              text
+              @click="dialogGraph = false"
+            >
+              Horrible
+            </v-btn>
+  
+            <v-btn
+              color="green darken-1"
+              text
+              @click="dialogGraph = false"
+            >
+              Nice
             </v-btn>
           </v-card-actions>
         </v-card>
@@ -113,6 +158,7 @@ export default Vue.extend({
     return {
       dialogNormal: false,
       dialogLong: false,
+      dialogGraph: false,
 
     }
   },
