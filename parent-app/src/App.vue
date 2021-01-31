@@ -58,8 +58,8 @@ export default Vue.extend({
     links: [
       ["mdi-home", "Home", "/"],
       ["mdi-inbox-arrow-down", "Inbox", "/inbox"],
-      ["mdi-send", "Send", "/about"],
-      ["mdi-alert-octagon", "Spam", "/child1"],
+      ["mdi-iframe-array", "Embedded page", "/child1"],
+      ["mdi-launch", "Dialogs", "/dialogs"],
     ],
   }),
 });
