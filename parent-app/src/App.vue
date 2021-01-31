@@ -35,7 +35,12 @@
     </v-navigation-drawer>
 
     <v-main>
+      <!-- <vue-friendly-iframe
+        src="https://8081-a6b6d588-a78c-4b29-8563-e0f15ab5d201.ws-eu03.gitpod.io/"
+      ></vue-friendly-iframe> -->
+      <p>above content</p>
       <router-view />
+      <p>below content</p>
     </v-main>
   </v-app>
 </template>
@@ -61,3 +66,9 @@ export default Vue.extend({
   }),
 });
 </script>
+<style >
+iframe {
+  width: 1px;
+  min-width: 100%;
+}
+</style>

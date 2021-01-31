@@ -1,10 +1,7 @@
 <template>
   <v-app>
-   
-
-    <v-main>
       <HelloWorld />
-    </v-main>
+
   </v-app>
 </template>
 
@@ -16,11 +13,17 @@ export default Vue.extend({
   name: "App",
 
   components: {
-    HelloWorld
+    HelloWorld,
   },
 
   data: () => ({
     //
-  })
+  }),
+  mounted() {
+    const resizerScript = document.createElement('script')
+    resizerScript.setAttribute('src', 'https://cdn.jsdelivr.net/npm/iframe-resizer@4.3.1/js/iframeResizer.contentWindow.min.js')
+    document.head.appendChild(resizerScript)
+    },
 });
 </script>
+
