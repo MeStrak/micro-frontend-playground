@@ -8,7 +8,7 @@
       v-resize.quiet="{ log: true }"
       width="100%"
       frameborder="0"
-      src="https://8080-a6b6d588-a78c-4b29-8563-e0f15ab5d201.ws-eu03.gitpod.io/"
+      :src=childApp
     ></iframe>
     <v-card elevation="2"
       >This Vuetify card is after the iFrame, in the same component in the
@@ -34,6 +34,12 @@ export default Vue.extend({
       },
     },
   },
+  data () {
+      return {
+          graphApp: process.env.VUE_APP_CYTO_APP_URL,
+          childApp: process.env.VUE_APP_CHILD_APP_URL
+      }
+  }
 });
 </script>
 <style scoped>

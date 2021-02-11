@@ -23,7 +23,7 @@
     <v-btn color="primary" dark @click.stop="dialogLong = true">
       Show a LONG dialog containing an iFrame.
     </v-btn>
-<br /><br />
+    <br /><br />
     <v-btn color="primary" dark @click.stop="dialogTabs = true">
       Show a dialog with tabs containing iFrames.</v-btn
     >
@@ -38,7 +38,7 @@
           v-resize.quiet="{ log: true }"
           width="100%"
           frameborder="0"
-          src="https://8080-a6b6d588-a78c-4b29-8563-e0f15ab5d201.ws-eu03.gitpod.io/"
+          :src=childApp
         ></iframe>
 
         <v-card-actions>
@@ -65,7 +65,7 @@
           v-resize.quiet="{ log: true }"
           width="100%"
           frameborder="0"
-          src="https://8082-a6b6d588-a78c-4b29-8563-e0f15ab5d201.ws-eu03.gitpod.io/"
+          :src=graphApp
         ></iframe>
 
         <v-card-actions>
@@ -92,7 +92,7 @@
           v-resize.quiet="{ log: true }"
           width="100%"
           frameborder="0"
-          src="https://8080-a6b6d588-a78c-4b29-8563-e0f15ab5d201.ws-eu03.gitpod.io/long"
+          :src=childAppLong
         ></iframe>
 
         <v-card-actions>
@@ -129,7 +129,7 @@
               v-resize.quiet="{ log: true }"
               width="100%"
               frameborder="0"
-              src="https://8080-a6b6d588-a78c-4b29-8563-e0f15ab5d201.ws-eu03.gitpod.io/"
+              :src=childApp
             ></iframe>
           </v-tab-item>
 
@@ -138,7 +138,7 @@
               v-resize.quiet="{ log: true }"
               width="100%"
               frameborder="0"
-              src="https://8080-a6b6d588-a78c-4b29-8563-e0f15ab5d201.ws-eu03.gitpod.io/long"
+              :src=childAppLong
             ></iframe>
           </v-tab-item>
 
@@ -147,7 +147,7 @@
               v-resize.quiet="{ log: true }"
               width="100%"
               frameborder="0"
-              src="https://8082-a6b6d588-a78c-4b29-8563-e0f15ab5d201.ws-eu03.gitpod.io/"
+              :src=graphApp
             ></iframe>
           </v-tab-item>
         </v-tabs-items>
@@ -177,8 +177,10 @@ export default Vue.extend({
       dialogLong: false,
       dialogGraph: false,
       dialogTabs: false,
-            tab: null,
-
+      tab: null,
+      graphApp: process.env.VUE_APP_CYTO_APP_URL,
+      childApp: process.env.VUE_APP_CHILD_APP_URL,
+      childAppLong: process.env.VUE_APP_CHILD_APP_URL + '/long',
     };
   },
   directives: {
