@@ -846,6 +846,11 @@
     lodash "^4.17.19"
     to-fast-properties "^2.0.0"
 
+"@braintree/uuid@^0.1.0":
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/@braintree/uuid/-/uuid-0.1.0.tgz#ab9355015a7fb0e25cf3c2ff9cd32ece8ea304b0"
+  integrity sha512-YvZJdlNcK5EnR+7M8AjgEAf4Qx696+FOSYlPfy5ePn80vODtVAUU0FxHnzKZC0og1VbDNQDDiwhthR65D4Na0g==
+
 "@cnakazawa/watch@^1.0.3":
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/@cnakazawa/watch/-/watch-1.0.4.tgz#f864ae85004d0fcab6f50be9141c4da368d1656a"
@@ -5017,6 +5022,13 @@ fragment-cache@^0.2.1:
   dependencies:
     map-cache "^0.2.2"
 
+framebus@^5.1.0:
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/framebus/-/framebus-5.1.0.tgz#3a22a390c7eab194664f8e68f9b0d7d21762c404"
+  integrity sha512-h8vgBMmLIU+1y8Zh/NzwSlwWaBO3UT/ZPDk0/CqwEdEdMsjjUN7Pzn7/JV3O8g84TYu6xkf7fgXIoYBRYDx4/w==
+  dependencies:
+    "@braintree/uuid" "^0.1.0"
+
 fresh@0.5.2:
   version "0.5.2"
   resolved "https://registry.yarnpkg.com/fresh/-/fresh-0.5.2.tgz#3d8cadd90d976569fa835ab1f8e4b23a105605a7"
@@ -8755,6 +8767,11 @@ public-encrypt@^4.0.0:
     parse-asn1 "^5.0.0"
     randombytes "^2.0.1"
     safe-buffer "^5.1.2"
+
+pubsub-js@^1.9.2:
+  version "1.9.2"
+  resolved "https://registry.yarnpkg.com/pubsub-js/-/pubsub-js-1.9.2.tgz#4d01fe4df7d1957efa681f6338ebc9ba11b7ef3a"
+  integrity sha512-t+djzDvEKv4GoP5nPJ5Ar5h+4MrwPw+C9/9l75GV8TzO49HezXnxR1G6E/QJZdE2EDsXRNMu6O9MFjpjkSV7zg==
 
 pump@^2.0.0:
   version "2.0.1"

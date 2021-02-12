@@ -1,14 +1,24 @@
 <template>
   <v-app id="inspire">
-    <v-system-bar app>
+    <v-app-bar app>
       <v-spacer></v-spacer>
+
+      <v-select
+        v-model="value"
+        :items="items"
+        chips
+        label="Chips"
+        multiple
+        solo
+        @change="changedValue"
+      ></v-select>
 
       <v-icon>mdi-square</v-icon>
 
       <v-icon>mdi-circle</v-icon>
 
       <v-icon>mdi-triangle</v-icon>
-    </v-system-bar>
+    </v-app-bar>
 
     <v-navigation-drawer v-model="drawer" app>
       <v-sheet color="grey lighten-4" class="pa-4">
@@ -35,9 +45,6 @@
     </v-navigation-drawer>
 
     <v-main>
-      <!-- <vue-friendly-iframe
-        src="https://8081-a6b6d588-a78c-4b29-8563-e0f15ab5d201.ws-eu03.gitpod.io/"
-      ></vue-friendly-iframe> -->
       <router-view />
     </v-main>
   </v-app>
@@ -46,11 +53,31 @@
 <script lang="ts">
 import Vue from "vue";
 import HelloWorld from "./components/HelloWorld.vue";
+import PubSub from "pubsub-js";
+import Framebus from "framebus";
 
 export default Vue.extend({
   name: "App",
 
   components: {},
+  methods: {
+    changedValue: function (value: any) {
+      //   var Framebus = require("framebus");
+      const bus = new Framebus(
+          {
+              channel: "ParentApp"
+          }
+      );
+      bus.emit("contextUpdate", {
+        from: "filtermenu",
+        contents: value,
+      });
+    },
+  },
+  mounted() {
+    console.log("mount");
+
+  },
 
   data: () => ({
     cards: ["Today", "Yesterday"],
@@ -61,6 +88,8 @@ export default Vue.extend({
       ["mdi-iframe-array", "Embedded page", "/child1"],
       ["mdi-launch", "Dialogs", "/dialogs"],
     ],
+    items: ["foo", "bar", "fizz", "buzz"],
+    value: ["foo", "bar", "fizz", "buzz"],
   }),
 });
 </script>

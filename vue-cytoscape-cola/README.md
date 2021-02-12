@@ -1,5 +1,7 @@
 # vue-cytoscape-cytoscape.js-cola
 
+I didn't write this project - it is cloned from the repo vue-cytoscape-cytoscape.js- as a demo for integration in a micro app.
+
 > An example of usage of vue-cytoscape with cytoscape.js-cola
 
 This example shows how to use the `cytoscape-cola` extension with `vue-cytoscape`.

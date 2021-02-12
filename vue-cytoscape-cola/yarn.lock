@@ -87,6 +87,11 @@
     lodash "^4.2.0"
     to-fast-properties "^2.0.0"
 
+"@braintree/uuid@^0.1.0":
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/@braintree/uuid/-/uuid-0.1.0.tgz#ab9355015a7fb0e25cf3c2ff9cd32ece8ea304b0"
+  integrity sha512-YvZJdlNcK5EnR+7M8AjgEAf4Qx696+FOSYlPfy5ePn80vODtVAUU0FxHnzKZC0og1VbDNQDDiwhthR65D4Na0g==
+
 abbrev@1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/abbrev/-/abbrev-1.1.1.tgz#f8f2c887ad10bf67f634f005b6987fed3179aac8"
@@ -3013,6 +3018,13 @@ fragment-cache@^0.2.1:
   integrity sha1-QpD60n8T6Jvn8zeZxrxaCr//DRk=
   dependencies:
     map-cache "^0.2.2"
+
+framebus@^5.1.0:
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/framebus/-/framebus-5.1.0.tgz#3a22a390c7eab194664f8e68f9b0d7d21762c404"
+  integrity sha512-h8vgBMmLIU+1y8Zh/NzwSlwWaBO3UT/ZPDk0/CqwEdEdMsjjUN7Pzn7/JV3O8g84TYu6xkf7fgXIoYBRYDx4/w==
+  dependencies:
+    "@braintree/uuid" "^0.1.0"
 
 fresh@0.5.2:
   version "0.5.2"

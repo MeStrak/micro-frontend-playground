@@ -5,12 +5,13 @@
   "author": "Robert Carcasses Quevedo <carcasses@gmail.com>",
   "private": true,
   "scripts": {
-    "serve": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
+    "serve": "webpack-dev-server --port 9000 --inline --progress --config build/webpack.dev.conf.js",
     "lint": "eslint --ext .js,.vue src",
     "build": "node build/build.js"
   },
   "dependencies": {
     "cytoscape-cola": "^2.3.0",
+    "framebus": "^5.1.0",
     "vue": "^2.5.2",
     "vue-cytoscape": "^0.2.3"
   },
