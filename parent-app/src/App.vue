@@ -61,22 +61,19 @@ export default Vue.extend({
 
   components: {},
   methods: {
-    changedValue: function (value: any) {
+    changedValue: function(value: any) {
       //   var Framebus = require("framebus");
-      const bus = new Framebus(
-          {
-              channel: "ParentApp"
-          }
-      );
+      const bus = new Framebus({
+        channel: "ParentApp"
+      });
       bus.emit("contextUpdate", {
         from: "filtermenu",
-        contents: value,
+        contents: value
       });
-    },
+    }
   },
   mounted() {
     console.log("mount");
-
   },
 
   data: () => ({
@@ -86,14 +83,14 @@ export default Vue.extend({
       ["mdi-home", "Home", "/"],
       ["mdi-inbox-arrow-down", "Inbox", "/inbox"],
       ["mdi-iframe-array", "Embedded page", "/child1"],
-      ["mdi-launch", "Dialogs", "/dialogs"],
+      ["mdi-launch", "Dialogs", "/dialogs"]
     ],
     items: ["foo", "bar", "fizz", "buzz"],
-    value: ["foo", "bar", "fizz", "buzz"],
-  }),
+    value: ["foo", "bar", "fizz", "buzz"]
+  })
 });
 </script>
-<style >
+<style>
 iframe {
   width: 1px;
   min-width: 100%;

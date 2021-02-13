@@ -12,12 +12,11 @@
 
       <v-col class="mb-4">
         <h1 class="display-2 font-weight-bold mb-3">
-          Welcome to the Parent App
+          Welcome to THE STUDIO
         </h1>
 
         <p class="subheading font-weight-regular">
-          This is a playground testing use of iFrames for hosting micro-front
-          ends.
+          This is a playground testing stuff out for running micro front ends.
         </p>
 
         <ul>
@@ -30,7 +29,6 @@
             is used in both parent and child app to resize the iFrame according
             to child content.
           </li>
-          
         </ul>
       </v-col>
 
@@ -51,7 +49,11 @@
       </v-col>
 
       <v-col class="mb-5" cols="12">
-        <h2 class="headline font-weight-bold mb-3">Important Links</h2>
+        <h2 class="headline font-weight-bold mb-3">Micro frontends</h2>
+        <p>
+          The app has several embedded frontends. Launch the individual
+          frameless pages with the links below.
+        </p>
 
         <v-row justify="center">
           <a
@@ -87,6 +89,7 @@
 
 <script lang="ts">
 import Vue from "vue";
+declare let require: any;
 
 export default Vue.extend({
   name: "HelloWorld",
@@ -95,54 +98,45 @@ export default Vue.extend({
     ecosystem: [
       {
         text: "vuetify-loader",
-        href: "https://github.com/vuetifyjs/vuetify-loader",
+        href: "https://github.com/vuetifyjs/vuetify-loader"
       },
       {
         text: "github",
-        href: "https://github.com/vuetifyjs/vuetify",
+        href: "https://github.com/vuetifyjs/vuetify"
       },
       {
         text: "awesome-vuetify",
-        href: "https://github.com/vuetifyjs/awesome-vuetify",
-      },
+        href: "https://github.com/vuetifyjs/awesome-vuetify"
+      }
     ],
     importantLinks: [
       {
-        text: "Documentation",
-        href: "https://vuetifyjs.com",
+        text: "Embedded micro app 1",
+        href: process.env.VUE_APP_CHILD_APP_URL
       },
       {
-        text: "Chat",
-        href: "https://community.vuetifyjs.com",
+        text: "Long content",
+        href: process.env.VUE_APP_CHILD_APP_URL + "/long"
       },
       {
-        text: "Made with Vuetify",
-        href: "https://madewithvuejs.com/vuetify",
-      },
-      {
-        text: "Twitter",
-        href: "https://twitter.com/vuetifyjs",
-      },
-      {
-        text: "Articles",
-        href: "https://medium.com/vuetify",
-      },
+        text: "App with more complex layout",
+        href: process.env.VUE_APP_CYTO_APP_URL
+      }
     ],
     whatsNext: [
       {
         text: "Explore components",
-        href: "https://vuetifyjs.com/components/api-explorer",
+        href: "https://vuetifyjs.com/components/api-explorer"
       },
       {
         text: "Select a layout",
-        href: "https://vuetifyjs.com/getting-started/pre-made-layouts",
+        href: "https://vuetifyjs.com/getting-started/pre-made-layouts"
       },
       {
         text: "Frequently Asked Questions",
-        href:
-          "https://vuetifyjs.com/getting-started/frequently-asked-questions",
-      },
-    ],
-  }),
+        href: "https://vuetifyjs.com/getting-started/frequently-asked-questions"
+      }
+    ]
+  })
 });
 </script>

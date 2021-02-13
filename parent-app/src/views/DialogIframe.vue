@@ -38,7 +38,7 @@
           v-resize.quiet="{ log: true }"
           width="100%"
           frameborder="0"
-          :src=childApp
+          :src="childApp"
         ></iframe>
 
         <v-card-actions>
@@ -65,7 +65,7 @@
           v-resize.quiet="{ log: true }"
           width="100%"
           frameborder="0"
-          :src=graphApp
+          :src="graphApp"
         ></iframe>
 
         <v-card-actions>
@@ -92,7 +92,7 @@
           v-resize.quiet="{ log: true }"
           width="100%"
           frameborder="0"
-          :src=childAppLong
+          :src="childAppLong"
         ></iframe>
 
         <v-card-actions>
@@ -129,7 +129,7 @@
               v-resize.quiet="{ log: true }"
               width="100%"
               frameborder="0"
-              :src=childApp
+              :src="childApp"
             ></iframe>
           </v-tab-item>
 
@@ -138,7 +138,7 @@
               v-resize.quiet="{ log: true }"
               width="100%"
               frameborder="0"
-              :src=childAppLong
+              :src="childAppLong"
             ></iframe>
           </v-tab-item>
 
@@ -147,7 +147,7 @@
               v-resize.quiet="{ log: true }"
               width="100%"
               frameborder="0"
-              :src=graphApp
+              :src="graphApp"
             ></iframe>
           </v-tab-item>
         </v-tabs-items>
@@ -180,24 +180,23 @@ export default Vue.extend({
       tab: null,
       graphApp: process.env.VUE_APP_CYTO_APP_URL,
       childApp: process.env.VUE_APP_CHILD_APP_URL,
-      childAppLong: process.env.VUE_APP_CHILD_APP_URL + '/long',
+      childAppLong: process.env.VUE_APP_CHILD_APP_URL + "/long"
     };
   },
   directives: {
     resize: {
-      bind: function (
+      bind: function(
         el,
         {
           options = {
-            scrolling: false,
-          },
+            scrolling: false
+          }
         }
       ) {
         el.addEventListener("load", () => iFrameResize(options, el));
-      },
-    },
-  },
+      }
+    }
+  }
 });
 </script>
-<style scoped>
-</style>
+<style scoped></style>

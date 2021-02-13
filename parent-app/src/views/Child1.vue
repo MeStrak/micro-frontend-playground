@@ -8,7 +8,7 @@
       v-resize.quiet="{ log: true }"
       width="100%"
       frameborder="0"
-      :src=childApp
+      :src="childApp"
     ></iframe>
     <v-card elevation="2"
       >This Vuetify card is after the iFrame, in the same component in the
@@ -22,25 +22,24 @@ import iFrameResize from "iframe-resizer/js/iframeResizer";
 export default Vue.extend({
   directives: {
     resize: {
-      bind: function (
+      bind: function(
         el,
         {
           options = {
-            scrolling: false,
-          },
+            scrolling: false
+          }
         }
       ) {
         el.addEventListener("load", () => iFrameResize(options, el));
-      },
-    },
-  },
-  data () {
-      return {
-          graphApp: process.env.VUE_APP_CYTO_APP_URL,
-          childApp: process.env.VUE_APP_CHILD_APP_URL
       }
+    }
+  },
+  data() {
+    return {
+      graphApp: process.env.VUE_APP_CYTO_APP_URL,
+      childApp: process.env.VUE_APP_CHILD_APP_URL
+    };
   }
 });
 </script>
-<style scoped>
-</style>
+<style scoped></style>
