@@ -1,6 +1,9 @@
 <template>
   <div class="home">
+
     <HelloWorld msg="This is child app 1!!!!" />
+          <v-row class="text-center">
+      <v-col cols="6" offset="3">
     <v-select
       v-model="value"
       :items="items"
@@ -10,6 +13,7 @@
       solo
       @change="changedValue"
     ></v-select>
+      </v-col></v-row>
   </div>
 </template>
 

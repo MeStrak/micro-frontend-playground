@@ -12,31 +12,42 @@
 
       <v-col class="mb-4">
         <h1 class="display-2 font-weight-bold mb-3">
-         I'm in the child app!
+         You're in the STUDY ZONE.
         </h1>
 
         <p class="subheading font-weight-regular">
-          Simple component hosted in a page in the child app.
+          Let's go to work!
+        </p>
+              <p class="subheading font-weight-regular">
+                  I am a micro front end.<br />
+        </p>
+      </v-col>
+
+<v-col class="mb-5" cols="12">
+        <h2 class="headline font-weight-bold mb-3">
+          Isolated environment
+        </h2>
+              <p class="subheading font-weight-regular">
+                  
+                      Everything you see is running in an isolated environment.<br />
+                      My code base and release cycle is totally independent of the parent application.
+
 
         </p>
+
       </v-col>
 
       <v-col class="mb-5" cols="12">
         <h2 class="headline font-weight-bold mb-3">
-          What's next?
+          Controlled context sync
         </h2>
+              <p class="subheading font-weight-regular">
+                  
+          I allow synchronisation of filters and other contextual information from my parent app.<br />
+          I fully control which events I subscribe to, and which data I will accept.
 
-        <v-row justify="center">
-          <a
-            v-for="(next, i) in whatsNext"
-            :key="i"
-            :href="next.href"
-            class="subheading mx-3"
-            target="_blank"
-          >
-            {{ next.text }}
-          </a>
-        </v-row>
+        </p>
+
       </v-col>
 
       <v-col class="mb-5" cols="12">
