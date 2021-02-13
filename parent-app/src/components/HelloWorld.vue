@@ -16,20 +16,11 @@
         </h1>
 
         <p class="subheading font-weight-regular">
-          This is a playground testing stuff out for running micro front ends.
+          This is a hacked together playground to test stuff out for running micro front ends.
         </p>
-
-        <ul>
-          <li>
-            <a
-              href="https://github.com/davidjbradshaw/iframe-resizer/"
-              target="_blank"
-              >iframe-resizer</a
-            >
-            is used in both parent and child app to resize the iFrame according
-            to child content.
-          </li>
-        </ul>
+<p class="subheading font-weight-regular">
+          So far the test covers iFrames and single-spa as possible micro frontend frameworks.
+        </p>
       </v-col>
 
       <v-col class="mb-5" cols="12">
@@ -69,11 +60,11 @@
       </v-col>
 
       <v-col class="mb-5" cols="12">
-        <h2 class="headline font-weight-bold mb-3">Ecosystem</h2>
+        <h2 class="headline font-weight-bold mb-3">iFrame ecosystem</h2>
 
         <v-row justify="center">
           <a
-            v-for="(eco, i) in ecosystem"
+            v-for="(eco, i) in iframeEcosystem"
             :key="i"
             :href="eco.href"
             class="subheading mx-3"
@@ -82,6 +73,14 @@
             {{ eco.text }}
           </a>
         </v-row>
+      </v-col>
+
+      <v-col class="mb-5" cols="12">
+        <h2 class="headline font-weight-bold mb-3">Messy code disclaimer</h2>
+  <p>
+          This is not a venture into clean code, it is a quickly hacked together POC and defintely not for production use!
+        </p>
+
       </v-col>
     </v-row>
   </v-container>
@@ -95,19 +94,15 @@ export default Vue.extend({
   name: "HelloWorld",
 
   data: () => ({
-    ecosystem: [
+    iframeEcosystem: [
       {
-        text: "vuetify-loader",
-        href: "https://github.com/vuetifyjs/vuetify-loader"
+        text: "iframe-resizer for responsive iFrames",
+        href: "https://github.com/davidjbradshaw/iframe-resizer/"
       },
       {
-        text: "github",
-        href: "https://github.com/vuetifyjs/vuetify"
+        text: "framebus for context syncing between parent and child app",
+        href: "https://github.com/braintree/framebus"
       },
-      {
-        text: "awesome-vuetify",
-        href: "https://github.com/vuetifyjs/awesome-vuetify"
-      }
     ],
     importantLinks: [
       {
