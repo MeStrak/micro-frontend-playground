@@ -31,12 +31,22 @@ export default class Home extends Vue {
   private items = ["foo", "bar", "fizz", "buzz"];
   private value = ["foo", "bar", "fizz", "buzz"];
 
+changedValue(value: any) {
+      //   var Framebus = require("framebus");
+      const bus = new Framebus({
+        channel: "ParentApp",
+      });
+      bus.emit("contextUpdate", {
+        from: "filtermenu",
+        contents: value,
+      });
+    }
   mounted() {
     const bus = new Framebus();
 
     const vthis = this; // eslint-disable-line @typescript-eslint/no-this-alias
     bus
-      .target({ channel: "ParentApp" })
+      .target({ channel: "ChildApp" })
       .on("contextUpdate", function (data: Record<string, unknown>) {
         const ev = this as MessageEvent;
         const messagePrefix = "/*framebus*/";

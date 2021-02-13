@@ -53,7 +53,6 @@
 <script lang="ts">
 import Vue from "vue";
 import HelloWorld from "./components/HelloWorld.vue";
-import PubSub from "pubsub-js";
 import Framebus from "framebus";
 
 export default Vue.extend({
@@ -61,19 +60,32 @@ export default Vue.extend({
 
   components: {},
   methods: {
-    changedValue: function(value: any) {
+    changedValue: function (value: any) {
       //   var Framebus = require("framebus");
       const bus = new Framebus({
-        channel: "ParentApp"
+        channel: "ParentApp",
       });
       bus.emit("contextUpdate", {
         from: "filtermenu",
-        contents: value
+        contents: value,
       });
-    }
+    },
   },
   mounted() {
     console.log("mount");
+    const bus = new Framebus();
+
+    const vthis = this; // eslint-disable-line @typescript-eslint/no-this-alias
+    bus
+      .target({ channel: "ParentApp" })
+      .on("contextUpdate", function (data: Record<string, unknown>) {
+        const ev = this as MessageEvent;
+        const messagePrefix = "/*framebus*/";
+        const dataObj = JSON.parse(ev.data.replace(messagePrefix, ""));
+        console.log(ev);
+        console.log(data.from + " was updated to: " + data.contents);
+        vthis.value = data.contents as [];
+      });
   },
 
   data: () => ({
@@ -83,11 +95,11 @@ export default Vue.extend({
       ["mdi-home", "Home", "/"],
       ["mdi-inbox-arrow-down", "Inbox", "/inbox"],
       ["mdi-iframe-array", "Embedded page", "/child1"],
-      ["mdi-launch", "Dialogs", "/dialogs"]
+      ["mdi-launch", "Dialogs", "/dialogs"],
     ],
     items: ["foo", "bar", "fizz", "buzz"],
-    value: ["foo", "bar", "fizz", "buzz"]
-  })
+    value: ["foo", "bar", "fizz", "buzz"],
+  }),
 });
 </script>
 <style>
