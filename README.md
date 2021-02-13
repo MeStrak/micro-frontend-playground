@@ -16,10 +16,11 @@ The different frameworks I'm testing are listed below.
 ### Issues so far
 - Formatting of scrollbars looks messy when hosted within a dialogue (need to add some styling)
 - iFrames don't correctly shrink when page is expanded then shrunk
+- Opening a bottom sheet in the long content page seems to open it right at the bottom of the iFrame, outside the current view so it is not visible
 
 ## single-spa
 - This is a framework actually designed for micro front-ends (unlike iFrames)
-- However, my implementation is an anti pattern as the whole application hosting multiple micro frontends is supposed to be built with single-spa
+- However, my implementation is an anti pattern as the whole application hosting multiple micro frontends is supposed to be built with single-spa https://single-spa.js.org/docs/faq/#should-i-have-a-parentroot-app-and-children-apps
 - This implementation only tests embedding of a single page, because I want to see how it will fit into existing applications
 
 ### Issues so far
