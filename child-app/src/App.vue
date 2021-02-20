@@ -7,7 +7,6 @@
 <script lang="ts">
 import Vue from "vue";
 import HelloWorld from "./components/HelloWorld.vue";
-import PubSub from "pubsub-js";
 import Framebus from "framebus";
 
 export default Vue.extend({
