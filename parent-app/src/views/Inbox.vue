@@ -59,10 +59,11 @@
   </v-container>
 </template>
 
-<script>
+<script lang="ts">
+import Vue from "vue";
 import iFrameResize from "iframe-resizer/js/iframeResizer";
 
-export default {
+export default Vue.extend({
   data: () => ({
     cards: ["Today", "Yesterday"],
     drawer: null,
@@ -79,16 +80,15 @@ export default {
   directives: {
     resize: {
       bind: function (
-        el,
-        {
-          options = {
-            scrolling: false,
-          },
-        }
+        el: any,
+        binding,        
       ) {
-        el.addEventListener("load", () => iFrameResize(options, el));
+        el.addEventListener("load", () => iFrameResize({
+            scrolling: false,
+          }, el));
+        return true;
       },
     },
   },
-};
+});
 </script>
