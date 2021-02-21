@@ -180,7 +180,7 @@ export default Vue.extend({
       tab: null,
       graphApp: process.env.VUE_APP_CYTO_APP_URL,
       childApp: process.env.VUE_APP_CHILD_APP_URL,
-      childAppLong: process.env.VUE_APP_CHILD_APP_URL + "/long"
+      childAppLong: process.env.VUE_APP_CHILD_APP_URL.concat("/long")
     };
   },
   directives: {
