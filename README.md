@@ -17,6 +17,7 @@ The different frameworks I'm testing are listed below.
 - Formatting of scrollbars looks messy when hosted within a dialogue (need to add some styling)
 - iFrames don't correctly shrink when page is expanded then shrunk
 - Opening a bottom sheet in the long content page seems to open it right at the bottom of the iFrame, outside the current view so it is not visible
+- With dropdown open in parent, clicking on child iFrame does not close dropdown (focus change not detected)
 
 ## single-spa
 - This is a framework actually designed for micro front-ends (unlike iFrames)
