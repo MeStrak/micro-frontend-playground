@@ -111,7 +111,8 @@ export default Vue.extend({
       },
       {
         text: "Long content",
-        href: process.env.VUE_APP_CHILD_APP_URL + "/long"
+        href: process.env.VUE_APP_CHILD_APP_URL.concat("/long")
+
       },
       {
         text: "App with more complex layout",
