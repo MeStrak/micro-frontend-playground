@@ -34,7 +34,7 @@ export default class Home extends Vue {
 changedValue(value: any) {
       //   var Framebus = require("framebus");
       const bus = new Framebus({
-        channel: "ParentApp",
+        channel: "ChildApp",
       });
       bus.emit("contextUpdate", {
         from: "filtermenu",
@@ -46,12 +46,13 @@ changedValue(value: any) {
 
     const vthis = this; // eslint-disable-line @typescript-eslint/no-this-alias
     bus
-      .target({ channel: "ChildApp" })
+      .target({ channel: "ParentApp" })
       .on("contextUpdate", function (data: Record<string, unknown>) {
         const ev = this as MessageEvent;
         const messagePrefix = "/*framebus*/";
         const dataObj = JSON.parse(ev.data.replace(messagePrefix, ""));
         console.log(ev);
+
         console.log(data.from + " was updated to: " + data.contents);
         vthis.value = data.contents as [];
       });

@@ -18,7 +18,7 @@ export default Vue.extend({
     //
   }),
   updated() {
-console.log("update");
+    console.log("update");
   },
   mounted() {
     const resizerScript = document.createElement("script");
@@ -31,28 +31,26 @@ console.log("update");
     console.log("mount");
 
     const bus = new Framebus();
-    
+
     const vthis = this; // eslint-disable-line @typescript-eslint/no-this-alias
     bus
-    .target({channel: "ParentApp"})
-    .on("contextUpdate", function (data: Record<string, unknown>) {
-       const ev = this as MessageEvent;
-       const messagePrefix = "/*framebus*/";
-       const dataObj = JSON.parse(ev.data.replace(messagePrefix, ""));
-       console.log(ev);
-        
-      console.log(data.from + " was updated to: " + data.contents);
-      vthis.value = Object.assign({}, data.contents);
-      console.log(vthis);
-      
-    });
+      .target({ channel: "ParentApp" })
+      .on("contextUpdate", function (data: Record<string, unknown>) {
+        const ev = this as MessageEvent;
+        const messagePrefix = "/*framebus*/";
+        const dataObj = JSON.parse(ev.data.replace(messagePrefix, ""));
+        console.log(ev);
 
+        console.log(data.from + " was updated to: " + data.contents);
+        vthis.value = Object.assign({}, data.contents);
+        console.log(vthis);
+      });
   },
   methods: {
-fart(){
-    console.log('farty fart');
-}
-  }
+    fart() {
+      console.log("farty fart");
+    },
+  },
 });
 </script>
 <style>

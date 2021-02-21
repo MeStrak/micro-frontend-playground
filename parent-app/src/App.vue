@@ -77,12 +77,13 @@ export default Vue.extend({
 
     const vthis = this; // eslint-disable-line @typescript-eslint/no-this-alias
     bus
-      .target({ channel: "ParentApp" })
+      .target({ channel: "ChildApp" })
       .on("contextUpdate", function (data: Record<string, unknown>) {
         const ev = this as MessageEvent;
         const messagePrefix = "/*framebus*/";
         const dataObj = JSON.parse(ev.data.replace(messagePrefix, ""));
         console.log(ev);
+        
         console.log(data.from + " was updated to: " + data.contents);
         vthis.value = data.contents as [];
       });
